@@ -1,0 +1,16 @@
+<dx-tab-panel
+  #tabPanel
+  [height]="260"
+  [dataSource]="TabInfo"
+  [selectedIndex]="0"
+  [loop]="false"
+  [animationEnabled]="true"
+  [swipeEnabled]="true"
+>
+  <div *dxTemplate="let tabInfo of 'title'">
+    <span>{{ tabInfo.tabName }}</span>
+  </div>
+  <div *dxTemplate="let tabInfo of 'item'">
+    <div *ngTemplateOutlet="getTemplate(tabInfo.tabName)" ></div>
+  </div>
+</dx-tab-panel>
